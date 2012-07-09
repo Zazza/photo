@@ -11,7 +11,7 @@ JSON PHP support
 GD PHP support
 Flash player
 
-chmod 777 /upload/ /upload/_thumb/
+chmod 770 /upload/ /upload/_thumb/
 
 Database dump: /sql/photo.sql
 
