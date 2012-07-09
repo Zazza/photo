@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="icon" type="image/gif" href="{{ registry.uri }}favicon.png" />
+<meta name="description" content="Ostora.Photo" />
+<meta name="keywords" content="Ostora.Photo" />
+<title>{{ title }}</title>
+<link href="{{ registry.uri }}css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
+<link href="{{ registry.uri }}css/main.css" rel="stylesheet" media="all" />
+<link href="{{ registry.uri }}css/jquery.treeview.css" rel="stylesheet" type="text/css" />
+<link href="{{ registry.uri }}css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="{{ registry.uri }}css/dropdown.upward.css" type="text/css" rel="stylesheet" />
+<link href="{{ registry.uri }}css/default.css" type="text/css" rel="stylesheet" />
+<link href="{{ registry.uri }}css/jquery.fancybox.css" type="text/css" rel="stylesheet" />
+<link href="{{ registry.uri }}css/jquery.Jcrop.min.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="{{ registry.uri }}js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery-ui-1.8.21.custom.min.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.treeview.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.Jcrop.min.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/scripts.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/fm.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/fileprogress.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/handlers.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/swfupload.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/swfupload.queue.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.contextmenu.r2.packed.js"></script>
+<script type="text/javascript" src="{{ registry.uri }}js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+<script type="text/javascript">
+    fmInit('{{ registry.uri }}', '{{ registry.get.id }}');
+</script>
+</head>
+
+<body>
+
+<div class="navbar">
+	<div class="navbar-inner">
+	
+	<div id="pbrand"><img alt="logo" src="{{ registry.uri }}img/ostora_small.png" /></div>
+	
+		<div class="container">
+			<ul class="nav">
+				<li class="active">
+					<a href="{{ registry.uri }}">
+						<i class="icon-home icon-white"></i>
+						Filemanager
+					</a>
+				</li>
+				
+				{% if registry.auth %}
+				{% if registry.ui.admin %}
+				<li>
+					<a href="{{ registry.uri }}users/">
+						<i class="icon-user icon-white"></i>
+						Users
+					</a>
+				</li>
+
+				<li>
+					<a href="{{ registry.uri }}statistic/">
+						<i class="icon-info-sign icon-white"></i>
+						Statistics
+					</a>
+				</li>
+				{% endif %}
+				{% endif %}
+			</ul>
+			
+			{% if registry.auth %}
+			<ul class="nav pull-right">
+				<li>
+					<span class="brand">{{ registry.ui.login }}</span>
+				</li>
+				<li style="margin-right: 30px; text-align: center">
+					<div id="user_quota"></div>
+				</li>
+				<li>
+					<a href="{{ registry.uri }}exit/">
+						<i class="icon-remove icon-white"></i>
+						Exit
+					</a>
+				</li>	
+			</ul>
+			{% else %}
+			<ul class="nav pull-right">
+			<li>
+			<a href="{{ registry.uri }}login/">
+				<i class="icon-user icon-white"></i>
+				Login
+			</a>
+			</li>
+			</ul>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container-fluid">
+<div class="row-fluid">
+
+{% if leftBlock %}
+<div id="leftContent">
+{{ leftBlock }}
+</div>
+
+<div id="wsContent"></div>
+
+<div id="rightContent">
+	<div style="padding: 0 20px">
+	<div style="outline: 0 none" id="touchID" tabindex="1">
+    	{{ main_content }}
+    </div>
+    <script type="text/javascript" src="{{ registry.uri }}js/touchscroll.js"></script>
+    </div>
+</div>
+{% else %}
+<div class="container">
+	{{ main_content }}
+</div>
+{% endif %}
+
+
+
+</div>
+</div>
+<!-- /CONTENT -->
+
+{% if bottom %}
+<div id="bottomPanel">
+<div class="well" style="margin-bottom: 0">
+{% if registry.auth %}
+	{{ bottom }}
+{% endif %}
+</div>
+</div>
+{% endif %}
+
+</body>
+</html>
