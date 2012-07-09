@@ -1,7 +1,6 @@
-# FILE MANAGER
+# Ostora.Photo
 
-[Demo](http://bitboom.ru/fm/demo/)
-Login and Password: filemanager/filemanager
+[Demo](http://bitboom.ru/photo/demo/)
 
 [Docs](http://bitboom.ru/)
 
@@ -14,9 +13,9 @@ Flash player
 
 chmod 777 /upload/ /upload/_thumb/
 
-Database dump: /sql/fm.sql
+Database dump: /sql/photo.sql
 
-Login and Password: falemanager/filemanager
+Login and Password: adminostora/adminostora
 
 ## License
 See COPYING file
