@@ -1,8 +1,10 @@
 # Ostora.Photo
 
-[Demo](http://bitboom.ru/photo/demo/)
+[Demo](http://tushkan.com/demo/photo/)
 
-[Docs](http://bitboom.ru/)
+Login and Password (optional): demo/demo
+
+Site: [http://tushkan.com/projects/ophoto/](http://tushkan.com/projects/ophoto/)
 
 ## Requirements
 PHP > 5.2
@@ -18,4 +20,6 @@ Database dump: /sql/photo.sql
 Login and Password: adminostora/adminostora
 
 ## License
-See COPYING file
+MIT
+
+See [COPYING](https://github.com/Zazza/photo/blob/master/COPYING) file
