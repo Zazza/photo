@@ -1,8 +1,8 @@
 # Ostora.Photo
 
-[Demo](http://tushkan.com/demo/photo/)
+New separate project: [mediabox-php-yii](https://github.com/Zazza/mediabox-php-yii)
 
-Login and Password (optional): demo/demo
+Oldest:
 
 Site: [http://tushkan.com/projects/ophoto/](http://tushkan.com/projects/ophoto/)
 
